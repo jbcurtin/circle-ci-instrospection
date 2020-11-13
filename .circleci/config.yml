@@ -10,7 +10,8 @@ jobs:
     steps:
     - checkout
     - run:
-      command: python echo_vars.py
+        name: Echo Echo
+        command: python echo_vars.py
 version: 2.1
 workflows:
   Echo Build:
