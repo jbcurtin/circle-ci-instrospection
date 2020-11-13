@@ -1,0 +1,19 @@
+executors:
+  notebook-executor:
+    docker:
+    - image: continuumio/miniconda3
+    resource_class: medium
+    working_directory: ~/repo
+jobs:
+  Echo ENVVars:
+    executor: notebook-executor
+    steps:
+    - checkout
+    - run:
+      command: python echo_vars.py
+version: 2.1
+workflows:
+  Echo Build:
+    jobs:
+      - Echo ENVVars
+  version: '2.1'
